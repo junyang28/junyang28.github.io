@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Minimum or Maximum path to reach a target Statement: Given a target find minimum or maximum cost&#x2F;path&#x2F;sum to reach the target.  Approach: Choose minimum or maximum path among all possible paths before">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Junyang Shi">
+<meta property="og:url" content="http://yoursite.com/archives/algorithm/dp.html">
+<meta property="og:site_name" content="Junyang Shi">
+<meta property="og:description" content="Minimum or Maximum path to reach a target Statement: Given a target find minimum or maximum cost&#x2F;path&#x2F;sum to reach the target.  Approach: Choose minimum or maximum path among all possible paths before">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-07T22:20:18.316Z">
+<meta property="article:modified_time" content="2020-03-07T22:20:18.316Z">
+<meta property="article:author" content="Junyang Shi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/archives/algorithm/dp.html"/>
+
+
+
+
+
+  <title> | Junyang Shi</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Junyang Shi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h1 id="Minimum-or-Maximum-path-to-reach-a-target"><a href="#Minimum-or-Maximum-path-to-reach-a-target" class="headerlink" title="Minimum or Maximum path to reach a target"></a>Minimum or Maximum path to reach a target</h1><ul>
+<li><p>Statement: Given a target find minimum or maximum cost/path/sum to reach the target.</p>
+</li>
+<li><p>Approach: Choose minimum or maximum path among all possible paths before the current state, then add value for the current state.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">routes[i] &#x3D; min(routes[i-1], routes[i-2], ... , routes[i-k]) + cost[i]</span><br><span class="line">&#x2F;&#x2F;每步求最大或者最小，然后加上当前的cost</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Example Problems</li>
+</ul>
+<p><a href="http://www.es.ele.tue.nl/education/5MC10/Solutions/knapsack.pdf" target="_blank" rel="noopener">0/1 Knapsack Problem</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Define the state function</span><br><span class="line">V[i,w] &#x3D; max(V[i-1,w], val[i] + V[i-1, w-wt[i]])</span><br><span class="line">&#x2F;&#x2F;i is the item number</span><br><span class="line">&#x2F;&#x2F;w is the weight</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank" rel="noopener">64. Minimum Path Sum Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for (int i &#x3D; 1; i &lt; n; ++i) &#123;</span><br><span class="line">   for (int j &#x3D; 1; j &lt; m; ++j) &#123;</span><br><span class="line">       grid[i][j] &#x3D; min(grid[i-1][j], grid[i][j-1]) + grid[i][j];</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">return grid[n-1][m-1]</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Two dimensional dp question</span><br><span class="line">&#x2F;&#x2F;Time complexity: O(mn)</span><br><span class="line">&#x2F;&#x2F;Space complexity: O(mn) -&gt; O(n) -&gt; O(1)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/coin-change/" target="_blank" rel="noopener">322. Coin Change Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (int j &#x3D; 1; j &lt;&#x3D; amount; ++j) &#123;</span><br><span class="line">   for (int i &#x3D; 0; i &lt; coins.size(); ++i) &#123;</span><br><span class="line">       if (coins[i] &lt;&#x3D; j) &#123;</span><br><span class="line">           dp[j] &#x3D; min(dp[j], dp[j - coins[i]] + 1);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;one dimensional dp question</span><br><span class="line">&#x2F;&#x2F;Space complexity: O(amount)</span><br><span class="line">&#x2F;&#x2F;time complexity: O(m*n)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/min-cost-climbing-stairs/" target="_blank" rel="noopener">746.Min Cost Climbing Stairs Easy</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for (int i &#x3D; 2; i &lt;&#x3D; n; ++i) &#123;</span><br><span class="line">   dp[i] &#x3D; min(dp[i-1], dp[i-2]) + (i &#x3D;&#x3D; n ? 0 : cost[i]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">return dp[n]</span><br><span class="line">&#x2F;&#x2F;There are top-down and bottom-up approaches</span><br><span class="line">&#x2F;&#x2F;Time complexity: O(n)</span><br><span class="line">&#x2F;&#x2F;Space complexity: O(n) -&gt; O(1)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/minimum-falling-path-sum/" target="_blank" rel="noopener">931. Minimum Falling Path Sum Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt; A.size(); i++)&#123;</span><br><span class="line">    for(int j &#x3D; 0; j &lt; A[i].size(); j++)&#123;</span><br><span class="line">        int temp &#x3D; A[i-1][j] + A[i][j];</span><br><span class="line">        if(j &gt; 0)&#123;</span><br><span class="line">            temp &#x3D; min(temp, A[i-1][j-1] + A[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        if(j &lt; A[i].size() - 1)&#123;</span><br><span class="line">            temp &#x3D; min(temp, A[i-1][j+1] + A[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        A[i][j] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;Space complexity can be improved without using extra array</span><br><span class="line">&#x2F;&#x2F;It is still a distance problem</span><br><span class="line">&#x2F;&#x2F;Find the shortest distance in current state and the next state can use the current state to get min value</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/minimum-cost-for-tickets/" target="_blank" rel="noopener">983. Minimum Cost For Tickets Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dp[i] :&#x3D; min cost to cover i-th day</span><br><span class="line">dp[0] &#x3D; 0</span><br><span class="line">dp[i] &#x3D; dp[i-1] of mp trave on i-th days</span><br><span class="line">dp[i] &#x3D; min(dp[i-1] + costs[0], dp[i-7] + costs[1], costs[i-30] + costs[2])</span><br><span class="line">&#x2F;&#x2F;Each step, we still choose the minimum value based on the previous state</span><br><span class="line">&#x2F;&#x2F;Follow the template equation:</span><br><span class="line">&#x2F;&#x2F;routes[i] &#x3D; min(routes[i-1], routes[i-2], ... , routes[i-k]) + cost[i]</span><br><span class="line">&#x2F;&#x2F;It can be one dimensional dp or two dimensinal dp</span><br><span class="line">&#x2F;&#x2F;TC &#x3D; O(366)</span><br><span class="line">&#x2F;&#x2F;SC &#x3D; O(366)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/2-keys-keyboard/" target="_blank" rel="noopener">650. 2 Keys Keyboard Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 2; i &lt;&#x3D; n; i++)&#123;</span><br><span class="line">    for(int j &#x3D; 1; j &lt; i; j++)&#123;</span><br><span class="line">        if(i % j &#x3D;&#x3D; 0)&#123;</span><br><span class="line">            dp[i] &#x3D; min(dp[i], dp[j] + i&#x2F;j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;TC &#x3D; O(n^2)</span><br><span class="line">&#x2F;&#x2F;SC &#x3D; O(n)</span><br><span class="line">&#x2F;&#x2F;Still the typical minimum&#x2F;maximum dp based on the previous state</span><br><span class="line">&#x2F;&#x2F;key point: we must copy first and paste multiple times in one state</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/perfect-squares/" target="_blank" rel="noopener">279. Perfect Squares Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 2; i &lt;&#x3D; n; i++)&#123;</span><br><span class="line">    for(int j &#x3D; 1; j * j &lt;&#x3D; i; j++)&#123;</span><br><span class="line">        if(dp[i-j*j] !&#x3D; INT_MAX)&#123;</span><br><span class="line">            dp[i] &#x3D; min(dp[i], dp[i-j*j] + 1);</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;TC &#x3D; O(n*square root(n))</span><br><span class="line">&#x2F;&#x2F;SC &#x3D; O(n)</span><br><span class="line">&#x2F;&#x2F;Shortest distance: we use the current shortest path, and use this path to find further path</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/last-stone-weight-ii/" target="_blank" rel="noopener">1049. Last Stone Weight II Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; dp(sum + 1, 0);</span><br><span class="line">for(auto item : stones)&#123;</span><br><span class="line">    vector&lt;int&gt; temp &#x3D; dp;</span><br><span class="line">    for(int i &#x3D; 1; i &lt;&#x3D; sum; i++)&#123;</span><br><span class="line">        if(i - item &gt;&#x3D; 0)&#123;</span><br><span class="line">            temp[i] &#x3D; dp[i-item] | dp[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dp &#x3D; temp;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;record the weight can be achieved by the previous stones (knapsack problem)</span><br><span class="line">&#x2F;&#x2F;then add new stone, so recorded new weight can be achieved</span><br><span class="line">&#x2F;&#x2F;go through all weight can be achieved, and find the minimum diff value</span><br><span class="line">&#x2F;&#x2F;类似于最短路径，利用之前的状态来计算下一种状态</span><br><span class="line">&#x2F;&#x2F;这边是利用之前的石头能够达到的不同的总重量，那么加入现在的新的石头，能够达到的也变多了</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/triangle/" target="_blank" rel="noopener">120. Triangle Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt; triangle.size(); i++)&#123;</span><br><span class="line">    for(int j &#x3D; 0; j &lt; triangle[i].size(); j++)&#123;</span><br><span class="line">        int temp &#x3D; INT_MAX;</span><br><span class="line">        if(j &gt; 0)&#123;</span><br><span class="line">            temp &#x3D; min(temp, triangle[i-1][j-1] + triangle[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if(j !&#x3D; triangle[i].size() - 1)&#123;</span><br><span class="line">            temp &#x3D; min(temp, triangle[i-1][j] + triangle[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        triangle[i][j] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;bingha</span><br><span class="line">&#x2F;&#x2F;shortest path problem</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/ones-and-zeroes/" target="_blank" rel="noopener">474. Ones and Zeroes Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;This is a typical dp problem</span><br><span class="line">&#x2F;&#x2F;m is the &#39;0&#39; size, and n is the &#39;1&#39; size</span><br><span class="line">&#x2F;&#x2F;Put as much item into the bag as we can</span><br><span class="line">&#x2F;&#x2F;we just need to record the max items can be achieved with the bag size </span><br><span class="line">for(int i &#x3D; m; i &gt;&#x3D; 0; i--)&#123;</span><br><span class="line">    for(int j &#x3D; n; j &gt;&#x3D; 0; j--)&#123;</span><br><span class="line">        if(i - a &gt;&#x3D; 0 &amp;&amp; j - b &gt;&#x3D; 0)&#123;</span><br><span class="line">            dp[i][j] &#x3D; max(dp[i-a][j-b] + 1, dp[i][j]);</span><br><span class="line">            ans &#x3D; max(ans, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/maximal-square/" target="_blank" rel="noopener">221. Maximal Square Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt; dp.size(); i++)&#123;</span><br><span class="line">    for(int j &#x3D; 1; j &lt; dp[0].size(); j++)&#123;</span><br><span class="line">        if(dp[i][j] &#x3D;&#x3D; 1)&#123;</span><br><span class="line">            dp[i][j] &#x3D; min(min(dp[i-1][j], dp[i][j-1]), dp[i-1][j-1]) + 1;</span><br><span class="line">            ans &#x3D; max(ans, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;Standard dp question</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/" target="_blank" rel="noopener">1240. Tiling a Rectangle with the Fewest Squares Hard</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt;&#x3D; m; i++)&#123;</span><br><span class="line">    for(int j &#x3D; 1; j &lt;&#x3D; n; j++)&#123;</span><br><span class="line">        if(i &#x3D;&#x3D; j)&#123;</span><br><span class="line">            dp[i][j] &#x3D; 1;</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int t &#x3D; 1; t &lt; j; t++)&#123;</span><br><span class="line">            dp[i][j] &#x3D; min(dp[i][j], dp[i][j-t] + dp[i][t]);</span><br><span class="line">        &#125;</span><br><span class="line">        for(int t &#x3D; 1; t &lt; i; t++)&#123;</span><br><span class="line">            dp[i][j] &#x3D; min(dp[i][j], dp[i-t][j] + dp[t][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;Cut the rectangular into different pieces (left-right or top-down)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/dungeon-game/" target="_blank" rel="noopener">174. Dungeon Game Hard</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; m-1; i &gt;&#x3D; 0; i--)&#123;</span><br><span class="line">    for(int j &#x3D; n-1; j &gt;&#x3D; 0; j--)&#123;</span><br><span class="line">        dp[i][j] &#x3D; min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j];</span><br><span class="line">        if(dp[i][j] &lt;&#x3D; 0)&#123;</span><br><span class="line">            dp[i][j] &#x3D; 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;公式仍然类似，但是转换较难。此处是从右下角开始，然后回到左上角。</span><br><span class="line">&#x2F;&#x2F;每个格子代表的数值是最小的生命数可以救到公主。</span><br><span class="line">&#x2F;&#x2F;由于必须大于0，所以解救完公主后，生命应该为1</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/minimum-number-of-refueling-stops/" target="_blank" rel="noopener">871. Minimum Number of Refueling Stops Hard</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;dp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;priority queue</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Distinct-Ways"><a href="#Distinct-Ways" class="headerlink" title="Distinct Ways"></a>Distinct Ways</h1><ul>
+<li><p>Statement: Given a target find a number of distinct ways to reach the target.</p>
+</li>
+<li><p>Approach: Sum all possible ways to reach the current state.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">routes[i] &#x3D; routes[i-1] + routes[i-2], ... , + routes[i-k]</span><br><span class="line">&#x2F;&#x2F;每步求之前的若干步数的和</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>This can be compared with the first category: routes[i] = <strong>min</strong>(routes[i-1], routes[i-2], … , routes[i-k]) + cost[i]</p>
+</li>
+<li><p>Generate sum for all values in the target and return the value for the target.</p>
+</li>
+<li><p>Note: Some questions point out the number of <strong>repetitions</strong>, in that case, add one more loop to simulate every repetition.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for (int i &#x3D; 1; i &lt;&#x3D; target; ++i) &#123;</span><br><span class="line">   for (int j &#x3D; 0; j &lt; ways.size(); ++j) &#123;</span><br><span class="line">       if (ways[j] &lt;&#x3D; i) &#123;</span><br><span class="line">           dp[i] +&#x3D; dp[i - ways[j]];</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">return dp[target]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Example Problems</li>
+</ul>
+<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">70. Climbing Stairs Easy</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 3; i &lt;&#x3D; n; i++)&#123;</span><br><span class="line">    dp[i] &#x3D; dp[i-1] + dp[i-2];</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;next step is only determined by the previous one and previous two</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">62. Unique Paths Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 0; i &lt; m; i++)&#123;</span><br><span class="line">    for(int j &#x3D; 0; j &lt; n; j++)&#123;</span><br><span class="line">        if(i &gt; 0)&#123;</span><br><span class="line">            dp[i][j] +&#x3D; dp[i-1][j];</span><br><span class="line">        &#125;</span><br><span class="line">        if(j &gt; 0)&#123;</span><br><span class="line">            dp[i][j] +&#x3D; dp[i][j-1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;the current state can be traced back by [left side] and [up side]</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/" target="_blank" rel="noopener">1155. Number of Dice Rolls With Target Sum Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt;&#x3D; d; i++)&#123;</span><br><span class="line">    for(int j &#x3D; 1; j &lt;&#x3D; target; j++)&#123;</span><br><span class="line">        for(int dice &#x3D; 1; dice &lt;&#x3D; f; dice++)&#123;</span><br><span class="line">            if(j - dice &gt;&#x3D; 0)&#123;</span><br><span class="line">                dp[i][j] +&#x3D; dp[i-1][j-dice];</span><br><span class="line">                dp[i][j] %&#x3D; 1000000007;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;TC: O(d*target*f)</span><br><span class="line">&#x2F;&#x2F;SC: O(d*target) -&gt; O(target)</span><br><span class="line">&#x2F;&#x2F;target是目标的数目，一个一个的增加色子数目。</span><br><span class="line">&#x2F;&#x2F;把之前的可能性求和</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/knight-probability-in-chessboard/" target="_blank" rel="noopener">688. Knight Probability in Chessboard Medium</a></p>
+<p><a href="https://leetcode.com/problems/target-sum/" target="_blank" rel="noopener">494. Target Sum Medium</a></p>
+<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">377. Combination Sum IV Medium</a></p>
+<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">935. Knight Dialer Medium</a></p>
+<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">1223. Dice Roll Simulation Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">416. Partition Equal Subset Sum Medium</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 1; i &lt;&#x3D; nums.size(); i++)&#123;</span><br><span class="line">    for(int j &#x3D; 0; j &lt;&#x3D; sum&#x2F;2; j++)&#123;</span><br><span class="line">        if(j - nums[i-1] &gt;&#x3D; 0)&#123;</span><br><span class="line">            dp[i][j] &#x3D; dp[i-1][j - nums[i-1]] | dp[i-1][j];</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            dp[i][j] &#x3D; dp[i-1][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;similar to knapsack problem</span><br><span class="line">&#x2F;&#x2F;two dimensional array dp[m][n]</span><br><span class="line">&#x2F;&#x2F;m is the number of item, n is the weight can be achieved (here is the difference, not the bag size)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">808. Soup Servings Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">790. Domino and Tromino Tiling Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">801. Minimum Swaps To Make Sequences Increasing</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">673. Number of Longest Increasing Subsequence Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">63. Unique Paths II Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">576. Out of Boundary Paths Medium</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">1269. Number of Ways to Stay in the Same Place After Some Steps Hard</a></p>
+<p><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank" rel="noopener">1220. Count Vowels Permutation Hard</a></p>
+<p><a href="https://leetcode.com/problems/decode-ways/" target="_blank" rel="noopener">91. Decode Ways</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;标准的dp问题，前面的一步或者两步的状态叠加成为目前的状态</span><br><span class="line">&#x2F;&#x2F;注意分类讨论即可</span><br><span class="line">for(int i &#x3D; 1; i &lt; s.size(); i++)&#123;</span><br><span class="line">    int a &#x3D; s[i-1] - &#39;0&#39;;</span><br><span class="line">    int b &#x3D; s[i] - &#39;0&#39;;</span><br><span class="line">    int val &#x3D; a*10 + b;  </span><br><span class="line">    if(b !&#x3D; 0)&#123;</span><br><span class="line">        dp[i+1] +&#x3D; dp[i];</span><br><span class="line">    &#125;    </span><br><span class="line">    if(val &gt;&#x3D; 10 &amp;&amp; val &lt;&#x3D; 26)&#123;</span><br><span class="line">        dp[i+1] +&#x3D; dp[i-1];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Merging-Intervals"><a href="#Merging-Intervals" class="headerlink" title="Merging Intervals"></a>Merging Intervals</h1><ul>
+<li><p>Statement: Given a set of numbers find an optimal solution for a problem considering the current number and the best you can get from the left and right sides.</p>
+</li>
+<li><p>Approach: Find all optimal solutions for every interval and return the best possible answer.</p>
+</li>
+<li><p>Get the best from the left and right sides and add a solution for the current position.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;from i to j</span><br><span class="line">dp[i][j] &#x3D; dp[i][k] + result[k] + dp[k+1][j]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Example Problems</li>
+</ul>
+<h1 id="DP-on-Strings"><a href="#DP-on-Strings" class="headerlink" title="DP on Strings"></a>DP on Strings</h1><ul>
+<li><p>Statement: Given two strings s1 and s2, return some result.</p>
+</li>
+<li><p>Approach: Most of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity.</p>
+</li>
+<li><p>Get the best from the left and right sides and add a solution for the current position.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; i - indexing string s1</span><br><span class="line">&#x2F;&#x2F; j - indexing string s2</span><br><span class="line">for (int i &#x3D; 1; i &lt;&#x3D; n; ++i) &#123;</span><br><span class="line">   for (int j &#x3D; 1; j &lt;&#x3D; m; ++j) &#123;</span><br><span class="line">       if (s1[i-1] &#x3D;&#x3D; s2[j-1]) &#123;</span><br><span class="line">           dp[i][j] &#x3D; &#x2F;*code*&#x2F;;</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">           dp[i][j] &#x3D; &#x2F;*code*&#x2F;;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>If you are given one string s the approach may little vary</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (int l &#x3D; 1; l &lt; n; ++l) &#123;</span><br><span class="line">   for (int i &#x3D; 0; i &lt; n-l; ++i) &#123;</span><br><span class="line">       int j &#x3D; i + l;</span><br><span class="line">       if (s[i] &#x3D;&#x3D; s[j]) &#123;</span><br><span class="line">           dp[i][j] &#x3D; &#x2F;*code*&#x2F;;</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">           dp[i][j] &#x3D; &#x2F;*code*&#x2F;;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Example Problems</li>
+</ul>
+<h1 id="Decision-Making"><a href="#Decision-Making" class="headerlink" title="Decision Making"></a>Decision Making</h1>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar2.jpg"
+                alt="Junyang Shi" />
+            
+              <p class="site-author-name" itemprop="name">Junyang Shi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Minimum-or-Maximum-path-to-reach-a-target"><span class="nav-number">1.</span> <span class="nav-text">Minimum or Maximum path to reach a target</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Distinct-Ways"><span class="nav-number">2.</span> <span class="nav-text">Distinct Ways</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Merging-Intervals"><span class="nav-number">3.</span> <span class="nav-text">Merging Intervals</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DP-on-Strings"><span class="nav-number">4.</span> <span class="nav-text">DP on Strings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Decision-Making"><span class="nav-number">5.</span> <span class="nav-text">Decision Making</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyang Shi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
