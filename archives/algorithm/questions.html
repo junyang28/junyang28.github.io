@@ -86,8 +86,8 @@
 <meta property="og:site_name" content="Junyang Shi">
 <meta property="og:description" content="Questions1. Two Sum 12345678910111213vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &amp;#123;    unordered_map&lt;int, int&gt; m;        for(int i &#x3D; 0; i &lt; nums.size(); i++)&amp;#1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-27T01:47:30.689Z">
-<meta property="article:modified_time" content="2020-04-27T01:47:30.689Z">
+<meta property="article:published_time" content="2020-04-27T16:13:19.783Z">
+<meta property="article:modified_time" content="2020-04-27T16:13:19.783Z">
 <meta property="article:author" content="Junyang Shi">
 <meta name="twitter:card" content="summary">
 
@@ -319,7 +319,21 @@
 <p><a href="https://leetcode.com/problems/before-and-after-puzzle/" target="_blank" rel="noopener">1181. Before and After Puzzle</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">考察两个知识点：一个是hash table进行访问，一个是对字符串进行操作</span><br><span class="line">string的操作可以有，找空格，对string进行切割(substr operation)等。</span><br></pre></td></tr></table></figure>
 
-
+<p><a href="https://leetcode.com/problems/jump-game-iii/" target="_blank" rel="noopener">1306. Jump Game III</a></p>
+<pre><code>//Standard DFS and BFS (depth-first search and breadth-first search) question
+bool canReach(vector&lt;int&gt;&amp; arr, int start) {                
+    if(start &lt; 0 || start &gt;= arr.size())
+        return false;    
+    if(arr[start] == 0)
+        return true;   
+    if(arr[start] == -1)
+        return false;   
+    int temp = arr[start];
+    arr[start] = -1;
+    return canReach(arr, start - temp) || canReach(arr, start + temp);
+    //Start from the initialization point and explore the neighbor node by jumping negative and positive steps
+    //Please note that we need to modify the input arr to indicate visited node 
+}</code></pre>
         
       </div>
       
