@@ -86,8 +86,8 @@
 <meta property="og:site_name" content="Junyang Shi">
 <meta property="og:description" content="Questions1. Two Sum 12345678910111213vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &amp;#123;    unordered_map&lt;int, int&gt; m;        for(int i &#x3D; 0; i &lt; nums.size(); i++)&amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-14T18:28:45.828Z">
-<meta property="article:modified_time" content="2020-05-14T18:28:45.828Z">
+<meta property="article:published_time" content="2020-05-16T20:13:15.645Z">
+<meta property="article:modified_time" content="2020-05-16T20:13:15.645Z">
 <meta property="article:author" content="Junyang Shi">
 <meta name="twitter:card" content="summary">
 
@@ -263,6 +263,9 @@
 
 <p><a href="https://leetcode.com/problems/group-anagrams/" target="_blank" rel="noopener">49. Group Anagrams</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用普通的方法sort每个string，然后作为hash table的输入值，这样就可以较好的归类 O(nklg(k))</span></span><br><span class="line"><span class="comment">//如果使用counting sort或者说bucket sort，可以提升复杂度，变为O(nk)</span></span><br><span class="line"><span class="comment">//n is the length of strs, and k is the maximum length of a string in strs</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key word: continuous subarray </span></span><br><span class="line"><span class="comment">//reduce the time complexity from O(n^2) to O(n) by using dp method</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = INT_MIN;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> item : nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pre &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">            pre = item;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            pre += item;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, pre);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://leetcode.com/problems/spiral-matrix/" target="_blank" rel="noopener">54. Spiral Matrix</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Just simulate the process</span></span><br></pre></td></tr></table></figure>
