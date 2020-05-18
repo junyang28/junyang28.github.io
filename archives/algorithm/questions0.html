@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Questions01. Two Sum 12345678910111213vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &amp;#123;    unordered_map&lt;int, int&gt; m;        for(int i &#x3D; 0; i &lt; nums.size(); i++)&amp;#123;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Junyang Shi">
+<meta property="og:url" content="http://yoursite.com/archives/algorithm/questions0.html">
+<meta property="og:site_name" content="Junyang Shi">
+<meta property="og:description" content="Questions01. Two Sum 12345678910111213vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &amp;#123;    unordered_map&lt;int, int&gt; m;        for(int i &#x3D; 0; i &lt; nums.size(); i++)&amp;#123;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-18T21:57:45.659Z">
+<meta property="article:modified_time" content="2020-05-18T21:57:45.659Z">
+<meta property="article:author" content="Junyang Shi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/archives/algorithm/questions0.html"/>
+
+
+
+
+
+  <title> | Junyang Shi</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Junyang Shi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h1 id="Questions0"><a href="#Questions0" class="headerlink" title="Questions0"></a>Questions0</h1><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">1. Two Sum</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.count(target - nums[i]))&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;m[target - nums[i]], i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        m[nums[i]] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//brute force 0(n^2) -&gt; two pass hash table -&gt; one pass hash table O(n)</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">2. Add Two Numbers</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">    ListNode* ans = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode* head = ans;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(l1 || l2 || carry)&#123;</span><br><span class="line">        <span class="keyword">int</span> val = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(l1)&#123;</span><br><span class="line">            val += l1-&gt;val;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(l2)&#123;</span><br><span class="line">            val += l2-&gt;val;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        val += carry;</span><br><span class="line">        </span><br><span class="line">        ans-&gt;next = <span class="keyword">new</span> ListNode(val%<span class="number">10</span>);</span><br><span class="line">        carry = val/<span class="number">10</span>;</span><br><span class="line">        ans = ans-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">11. Container With Most Water</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//brute force 算法 是首先使用的 O(n^2)</span></span><br><span class="line"><span class="comment">//然后使用two pointers来优化算法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;   </span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> hi = height.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(lo &lt; hi)&#123;</span><br><span class="line">        ans = max(ans, min(height[lo], height[hi]) * (hi - lo));</span><br><span class="line">        <span class="keyword">if</span>(height[lo] &lt; height[hi])&#123;</span><br><span class="line">            lo++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hi--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">15. 3Sum</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">0</span> || nums[i] != nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">        <span class="keyword">int</span> lo = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(lo &lt; hi)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = nums[lo] + nums[hi] + nums[i]; </span><br><span class="line">            <span class="keyword">if</span>(temp == <span class="number">0</span>)&#123;</span><br><span class="line">                ans.push_back(&#123;nums[i], nums[lo], nums[hi]&#125;);</span><br><span class="line">                <span class="keyword">while</span>(lo &lt; hi &amp;&amp; nums[lo] == nums[lo+<span class="number">1</span>])&#123;</span><br><span class="line">                    lo++;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">while</span>(lo &lt; hi &amp;&amp; nums[hi] == nums[hi<span class="number">-1</span>])&#123;</span><br><span class="line">                    hi--;</span><br><span class="line">                &#125;</span><br><span class="line">                lo++;</span><br><span class="line">                hi--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(temp &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                lo++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hi--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/" target="_blank" rel="noopener">17. Letter Combinations of a Phone Number</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DFS problem, Plot a tree and solve this proble easily.</span></span><br><span class="line"><span class="comment">//Time complexity: O(3^N * 4^M) where N is the number of digits in the input that maps to 3 letters</span></span><br><span class="line"><span class="comment">//M is the number of digits in the input that maps to 4 letters</span></span><br><span class="line"><span class="comment">//N + M is the total number digits in the input</span></span><br><span class="line"><span class="comment">//Space complexity: O(3^N * 4^M) keep the solution</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener">28. Implement strStr()</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. Brute-force Algorithm</span></span><br><span class="line"><span class="comment">2. KMP(Knuth-Morris-Pratt):</span></span><br><span class="line"><span class="comment">Fast pattern matching in strings + guaranteed worst case performance: O(m+n)</span></span><br><span class="line"><span class="comment">Two stages: pre-processing (table building O(m)) and matching (n)</span></span><br><span class="line"><span class="comment">Space complexity: O(m) with prefix table</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//Bruteforce algorithm</span></span><br><span class="line">    <span class="keyword">if</span>(needle.size() == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i + needle.size() - <span class="number">1</span> &gt;= haystack.size())</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">while</span>(i + j &lt; haystack.size() &amp;&amp; j &lt; needle.size() &amp;&amp; haystack[i+j] == needle[j])&#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j == needle.size())</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//We can also build a table (longest common prefix and suffix string), then only change index j</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/multiply-strings/" target="_blank" rel="noopener">43. Multiply Strings</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Traditional way: implement add functions (add big number) + implement mul functions (one number mul large number)</span></span><br><span class="line"><span class="comment">//Better way: one digit by one digit solution</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">multiply</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span> </span>&#123;</span><br><span class="line">    reverse(num1.begin(), num1.end());</span><br><span class="line">    reverse(num2.begin(), num2.end());    </span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">temp</span><span class="params">(num1.size() + num2.size(), <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num1.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num2.size(); j++)&#123;</span><br><span class="line">            temp[i+j] += (num1[i] - <span class="string">'0'</span>) * (num2[j] - <span class="string">'0'</span>);</span><br><span class="line">            temp[i+j+<span class="number">1</span>] += temp[i+j]/<span class="number">10</span>;</span><br><span class="line">            temp[i+j] %= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">int</span> j = temp.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &gt;= <span class="number">0</span> &amp;&amp; temp[j] == <span class="number">0</span>)&#123;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">    <span class="built_in">string</span> ans;</span><br><span class="line">    <span class="keyword">while</span>(j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">char</span> a = (<span class="string">'0'</span> + temp[j]);</span><br><span class="line">        ans += a;</span><br><span class="line">        j--;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/permutations/" target="_blank" rel="noopener">46. Permutations</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有的数字都是distinct number</span></span><br><span class="line"><span class="comment">//n次recursion call，每步选择一个数字，然后继续往下选择</span></span><br><span class="line"><span class="comment">//可以用树来visualize每步的选择</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; visited, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; temp, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;&amp; ans)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.size() == nums.size())&#123;</span><br><span class="line">            ans.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(visited[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                visited[i] = <span class="number">1</span>;<span class="function"><span class="keyword">bool</span> <span class="title">wordBreak</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; wordDict)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(s.size() + <span class="number">1</span>, <span class="number">0</span>)</span></span>;    </span><br><span class="line">    <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; uns;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> item : wordDict)&#123;</span><br><span class="line">        uns.insert(item);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; s.size(); j++)&#123;</span><br><span class="line">            <span class="built_in">string</span> temp = s.substr(i, j - i + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(uns.count(temp))&#123;</span><br><span class="line">                dp[j+<span class="number">1</span>] |= dp[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> dp[s.size()] == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">                temp.push_back(nums[i]);</span><br><span class="line">                helper(nums, visited, temp, ans);</span><br><span class="line">                temp.pop_back();</span><br><span class="line">                visited[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">permute</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">visited</span><span class="params">(nums.size(), <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; ans;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        helper(nums, visited, temp, ans);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/group-anagrams/" target="_blank" rel="noopener">49. Group Anagrams</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用普通的方法sort每个string，然后作为hash table的输入值，这样就可以较好的归类 O(nklg(k))</span></span><br><span class="line"><span class="comment">//如果使用counting sort或者说bucket sort，可以提升复杂度，变为O(nk)</span></span><br><span class="line"><span class="comment">//n is the length of strs, and k is the maximum length of a string in strs</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. Maximum Subarray</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key word: continuous subarray </span></span><br><span class="line"><span class="comment">//reduce the time complexity from O(n^2) to O(n) by using dp method</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = INT_MIN;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> item : nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pre &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">            pre = item;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            pre += item;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, pre);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//recurrence function: dp[j+1]=A[j+1]+max(dp[j],0) Kadane's algorithm</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/spiral-matrix/" target="_blank" rel="noopener">54. Spiral Matrix</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Just simulate the process</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/jump-game/" target="_blank" rel="noopener">55. Jump Game</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//greedy algorithm:每次寻找最远可以达到的点，最后判断是否可以达到终点</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://leetcode.com/problems/search-a-2d-matrix/" target="_blank" rel="noopener">74. Search a 2D Matrix</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Standard Binary Search</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">searchMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = matrix.size();</span><br><span class="line">    <span class="keyword">if</span>(m == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> n = matrix[<span class="number">0</span>].size();</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> hi = m*n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(lo &lt; hi)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = lo + (hi - lo)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> x = mid/n;</span><br><span class="line">        <span class="keyword">int</span> y = mid%n;</span><br><span class="line">        <span class="keyword">if</span>(matrix[x][y] &lt; target)&#123;</span><br><span class="line">            lo = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix[lo/n][lo%n] == target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank" rel="noopener">76. Minimum Window Substring</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Among all leetcode questions, there are at least 5 substring search problem which could be solved by the sliding window algorithm.</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">https://leetcode.com/problems/minimum-window-substring/</span></span><br><span class="line"><span class="comment">https://leetcode.com/problems/longest-substring-without-repeating-characters/</span></span><br><span class="line"><span class="comment">https://leetcode.com/problems/substring-with-concatenation-of-all-words/</span></span><br><span class="line"><span class="comment">https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/</span></span><br><span class="line"><span class="comment">https://leetcode.com/problems/find-all-anagrams-in-a-string/</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+<p><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">79. Word Search</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Backtracking is a more general purpose algorithm, while Depth-First Search is a specific form of</span></span><br><span class="line"><span class="comment">backtacking relateed to searching a tree structure.</span></span><br><span class="line"><span class="comment">One starts at the root and explores as far as possible along each branch before backtracking.</span></span><br><span class="line"><span class="comment">1. DFS handles an explicit tree, while backtracking handles an implicit tree</span></span><br><span class="line"><span class="comment">2. DFS is a special type of backtracking algorithmic design paradigm where the process of backtracking</span></span><br><span class="line"><span class="comment">takes place in the leaf nodes, In case of backtracking, the algorithm also rejects the useless branch </span></span><br><span class="line"><span class="comment">of the state-space tree. This is why DFS maintains the entire tree structure while backtracking maintains</span></span><br><span class="line"><span class="comment">a pruned tree.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> m, <span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; &gt;&amp; board, <span class="built_in">string</span>&amp; word, <span class="keyword">int</span> index, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;&amp; visited)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(index == word.size())</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt;= m || j &gt;= n)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(board[i][j] != word[index])</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(visited[i][j] == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    visited[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = helper(i<span class="number">-1</span>, j, m, n, board, word, index+<span class="number">1</span>, visited) ||</span><br><span class="line">        helper(i+<span class="number">1</span>, j, m, n, board, word, index+<span class="number">1</span>, visited) ||</span><br><span class="line">        helper(i, j<span class="number">-1</span>, m, n, board, word, index+<span class="number">1</span>, visited) ||</span><br><span class="line">        helper(i, j+<span class="number">1</span>, m, n, board, word, index+<span class="number">1</span>, visited);</span><br><span class="line">    visited[i][j] = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">exist</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board, <span class="built_in">string</span> word)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = board.size();</span><br><span class="line">    <span class="keyword">int</span> n = board[<span class="number">0</span>].size();</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; <span class="title">visited</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (n, <span class="number">0</span>))</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="keyword">bool</span> flag = helper(i, j, m, n, board, word, <span class="number">0</span>, visited);</span><br><span class="line">            <span class="keyword">if</span>(flag)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar2.jpg"
+                alt="Junyang Shi" />
+            
+              <p class="site-author-name" itemprop="name">Junyang Shi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Questions0"><span class="nav-number">1.</span> <span class="nav-text">Questions0</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyang Shi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

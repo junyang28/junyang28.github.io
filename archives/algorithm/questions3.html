@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Q&amp;A and DP[QA0] | [QA1] | [QA2] | [QA3] | [QA4] | [QA5] | [QA6] | [QA7] |  [QA8] | [QA9] | [QA10] | [QA11] | [QA12] | [QA13] | [QA14] | [QA15] | [DP]">
+<meta name="description" content="Questions3339. Nested List Weight Sum 12345678910111213141516171819&#x2F;&#x2F;类似OOP问题，system design问题。DFS或者BFS都可以求解class Solution &amp;#123;public:    int depthSum(vector&lt;NestedInteger&gt;&amp; nestedList) &amp;#12">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:title" content="Junyang Shi">
+<meta property="og:url" content="http://yoursite.com/archives/algorithm/questions3.html">
 <meta property="og:site_name" content="Junyang Shi">
-<meta property="og:description" content="Q&amp;A and DP[QA0] | [QA1] | [QA2] | [QA3] | [QA4] | [QA5] | [QA6] | [QA7] |  [QA8] | [QA9] | [QA10] | [QA11] | [QA12] | [QA13] | [QA14] | [QA15] | [DP]">
+<meta property="og:description" content="Questions3339. Nested List Weight Sum 12345678910111213141516171819&#x2F;&#x2F;类似OOP问题，system design问题。DFS或者BFS都可以求解class Solution &amp;#123;public:    int depthSum(vector&lt;NestedInteger&gt;&amp; nestedList) &amp;#12">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-07T16:33:34.000Z">
-<meta property="article:modified_time" content="2020-05-18T22:03:50.513Z">
+<meta property="article:published_time" content="2020-05-18T21:54:42.002Z">
+<meta property="article:modified_time" content="2020-05-18T21:54:42.002Z">
 <meta property="article:author" content="Junyang Shi">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/algorithm/questions3.html"/>
 
 
 
 
 
-  <title>Archives | Junyang Shi</title>
+  <title> | Junyang Shi</title>
   
 
 
@@ -225,7 +225,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Archives</h1>
+	<h1 class="post-title" itemprop="name headline"></h1>
 
 
 
@@ -237,16 +237,16 @@
       <div class="post-body">
         
         
-          <h2 id="Q-amp-A-and-DP"><a href="#Q-amp-A-and-DP" class="headerlink" title="Q&amp;A and DP"></a>Q&amp;A and DP</h2><p><a href="algorithm/questions0.html">[QA0]</a> | <a href="algorithm/questions1.html">[QA1]</a> | <a href="algorithm/questions2.html">[QA2]</a> | <a href="algorithm/questions3.html">[QA3]</a> | <a href="algorithm/questions4.html">[QA4]</a> | <a href="algorithm/questions5.html">[QA5]</a> | <a href="algorithm/questions6.html">[QA6]</a> | <a href="algorithm/questions7.html">[QA7]</a> |  <a href="algorithm/questions8.html">[QA8]</a> | <a href="algorithm/questions9.html">[QA9]</a> | <a href="algorithm/questions10.html">[QA10]</a> | <a href="algorithm/questions11.html">[QA11]</a> | <a href="algorithm/questions12.html">[QA12]</a> | <a href="algorithm/questions13.html">[QA13]</a> | <a href="algorithm/questions14.html">[QA14]</a> | <a href="algorithm/questions15.html">[QA15]</a> | <a href="algorithm/dp.html">[DP]</a></p>
-<!---
-## Embedded System
---->
+          <h1 id="Questions3"><a href="#Questions3" class="headerlink" title="Questions3"></a>Questions3</h1><p><a href="https://leetcode.com/problems/nested-list-weight-sum/" target="_blank" rel="noopener">339. Nested List Weight Sum</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类似OOP问题，system design问题。DFS或者BFS都可以求解</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">depthSum</span><span class="params">(<span class="built_in">vector</span>&lt;NestedInteger&gt;&amp; nestedList)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        helper(nestedList, ans, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;NestedInteger&gt;&amp; nestedList, <span class="keyword">int</span>&amp; ans, <span class="keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> item : nestedList)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item.isInteger())&#123;</span><br><span class="line">                ans += item.getInteger() * depth;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                helper(item.getList(), ans, depth+<span class="number">1</span>);   </span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<!---
-## Miscellaneous Read
+<p><a href="https://leetcode.com/problems/nested-list-weight-sum-ii/" target="_blank" rel="noopener">364. Nested List Weight Sum II</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//此题important。练习DFS和BFS很重要</span></span><br><span class="line"><span class="comment">//此题把OOP和DFS/BFS结合在了一起</span></span><br><span class="line"><span class="comment">//需要通过画图来可视化每一步的过程</span></span><br><span class="line"><span class="comment">//比如说如何找到每一层的数字，然后放入temp的数组，最后来进行计算</span></span><br></pre></td></tr></table></figure>
 
-[[LINK]](algorithm/labuladong.html).
---->
+<p><a href="https://leetcode.com/problems/insert-delete-getrandom-o1/" target="_blank" rel="noopener">380. Insert Delete GetRandom O(1)</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过结合：哈希表+普通的数组</span></span><br><span class="line"><span class="comment">//通过哈希表来查找位置，这样删除的时候就是O(1)</span></span><br><span class="line"><span class="comment">//添加的话，在数组后面直接添加，所以也是O(1)</span></span><br><span class="line"><span class="comment">//这样随机获取的话，就是随机的生成一个数，然后在数组内查询即可，也是O(1)</span></span><br></pre></td></tr></table></figure>
+
+
         
       </div>
       
@@ -345,7 +345,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A-and-DP"><span class="nav-number">1.</span> <span class="nav-text">Q&amp;A and DP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Questions3"><span class="nav-number">1.</span> <span class="nav-text">Questions3</span></a></li></ol></div>
             
 
           </div>
