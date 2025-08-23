@@ -15,7 +15,78 @@
   h4,
   h5,
   h6 {
-    font-family: "Roboto", sans-serif
+    font-family: "Roboto", sans-serif;
+  }
+
+  body {
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  }
+
+  .profile-avatar {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #009688;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .w3-card-4,
+  .w3-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    margin-bottom: 24px;
+  }
+
+  .w3-container {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #009688 0%, #00bcd4 100%);
+    margin: 24px 0;
+    border-radius: 2px;
+  }
+
+  a {
+    color: #009688;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: #00796b;
+    text-decoration: underline;
+  }
+
+  .w3-card-4:hover,
+  .w3-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.2s;
+  }
+
+  .social-icons {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+    color: #009688;
+    font-size: 1.5em;
+    transition: color 0.2s;
+  }
+
+  .social-icons a:hover {
+    color: #00796b;
   }
 </style>
 
@@ -33,26 +104,26 @@
         <div class="w3-white w3-text-grey w3-card-4">
           <div class="w3-display-container">
 
-            <img src="img/avatar2.jpg" style="width:100%" alt="Avatar">
-
-            <div class="w3-display-bottomleft w3-container w3-text-black">
-
+            <img src="img/avatar2.jpg" class="profile-avatar" alt="Avatar">
+            <div class="social-icons">
+              <a href="https://scholar.google.com/citations?user=CvsqIjMAAAAJ&hl=en" title="Google Scholar"><i
+                  class="fa fa-graduation-cap"></i></a>
+              <a href="https://github.com/junyang28" title="GitHub"><i class="fa fa-github"></i></a>
             </div>
           </div>
           <div class="w3-container">
-            <h2>Junyang Shi</h2>
-            Software Engineer
-            <br>
-            <a href="http://www.binghamton.edu/index.php" rel="nofollow">
-            </a>
-            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>New York, US</p>
-            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>jshi28 AT binghamton dot edu
+            <h2 style="text-align:center;">Junyang Shi</h2>
+            <p style="text-align:center; font-size:1.1em; color:#555;">Software Engineer <br>Ph.D. in Computer Science
             </p>
-
-            <p><i class="fa fa-mail-forward w3-margin-right w3-large w3-text-teal"></i>Address: New York, US</p>
-            <hr>
-
-
+            <p style="text-align:center; color:#009688; margin-bottom:8px;">
+              <i class="fa fa-home fa-fw w3-margin-right w3-large"></i>New York, US
+            </p>
+            <p style="text-align:center; color:#009688; margin-bottom:8px;">
+              <i class="fa fa-envelope fa-fw w3-margin-right w3-large"></i>jshi28 AT binghamton dot edu
+            </p>
+            <hr class="section-divider">
+            <p style="text-align:center; color:#666; font-size:0.95em;">Passionate about distributed system, IoT,
+              realtime system, wireless networks, and embedded systems.</p>
           </div>
         </div><br>
 
@@ -65,13 +136,14 @@
         <div class="w3-container w3-card w3-white w3-margin-bottom">
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Biography</h2>
+          <hr class="section-divider">
           <div class="w3-container">
             <p>I received my Ph.D. degree under the guidance of <a href="http://www.cs.binghamton.edu/~msha/"
                 rel="nofollow">Dr. Mo Sha</a> from the Department of Computer Science at Binghamton University (State
               University of New York at Binghamton) . I received a B.S. degree in Electrical and Electronics Engineering
               from Huazhong University of Science of Technology (HUST). My research interests include Industrial
-              Wireless Sensor-Actuator Networks, Internet of Things, and Embedded Systems. I am a student member of <a
-                href="https://www.ieee.org/" rel="nofollow">IEEE</a>.
+              Wireless Sensor-Actuator Networks, Distributed and Realtime System, Internet of Things, and Embedded
+              Systems. I am a student member of <a href="https://www.ieee.org/" rel="nofollow">IEEE</a>.
             </p><br>
           </div>
         </div>
@@ -79,21 +151,40 @@
         <div class="w3-container w3-card w3-white">
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-cogs fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Services</h2>
+          <hr class="section-divider">
           <div class="w3-container">
             <h4>TPC Chairs</h4>
             <p>Serve as the TPC track chair (Theory and Protocol) for ICPADS'24. Please consider submitting your paper;
               <a href="https://attend.ieee.org/icpads/call-for-papers/" rel="nofollow">Call for Papers.</a>
             </p>
             <h4>Reviewer</h4>
-            <p>IEEE Transactions on Cyber-Physical Systems 2025</p>
-            <p>The 50th IEEE Conference on Local Computer Networks (LCN) 2025</p>
-            <p>The 30th IEEE International Conference on Embedded and Real-Time Computing Systems and Applications (RTCSA) 2025</p>
-            <p>IEEE International Conference on Distributed Computing in Sensor Systems (DCOSS) 2025</p>
-            <p>The 40th ACM/SIGAPP Symposium On Applied Computing 2025</p>
-            <p>IEEE International Conference on Mobile Ad-Hoc and Smart Systems, 2024</p>
-            <p>IEEE Transactions on Industrial Informatics 2021</p>
-            <p>IEEE Wireless Communication Magazine 2020, 2021</p>
-            <p>IEEE Transactions on Vehicular Technology 2019</p>
+            <p>IEEE Transactions on Cyber-Physical Systems 2025
+              <a href="https://www.ieee-ies.org/pubs/transactions-on-industrial-cyberphysical-systems" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>The 50th IEEE Conference on Local Computer Networks (LCN) 2025
+              <a href="https://www.ieeelcn.org/" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>The 30th IEEE International Conference on Embedded and Real-Time Computing Systems and Applications (RTCSA) 2025
+              <a href="https://rtcsa2025.github.io/" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>IEEE International Conference on Distributed Computing in Sensor Systems (DCOSS) 2025
+              <a href="https://www.dcoss.org/" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>The 40th ACM/SIGAPP Symposium On Applied Computing 2025
+              <a href="https://www.sigapp.org/sac/sac2025/" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>IEEE International Conference on Mobile Ad-Hoc and Smart Systems, 2024
+              <a href="https://sites.google.com/corp/view/ieee-mass-2024/" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>IEEE Transactions on Industrial Informatics 2021
+              <a href="https://www.ieee-ies.org/pubs/transactions-on-industrial-informatics" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>IEEE Wireless Communication Magazine 2020, 2021
+              <a href="https://www.comsoc.org/publications/magazines/ieee-wireless-communications" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
+            <p>IEEE Transactions on Vehicular Technology 2019
+              <a href="https://vtsociety.org/publication/ieee-transactions-vehicular-technology/announcements" target="_blank" style="margin-left:8px;">[Website]</a>
+            </p>
             <hr>
           </div>
         </div>
@@ -101,6 +192,7 @@
         <div class="w3-container w3-card w3-white">
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Publications</h2>
+          <hr class="section-divider">
           <div class="w3-container">
             <p> [C] Junyang Shi and Mo Sha, <a href="paper/icccn22.pdf" rel="nofollow">Localizing Campus Shuttles from
                 One Single Base Station Using LoRa Link Characteristics</a>, IEEE International Conference on Computer
@@ -157,6 +249,7 @@
         <div class="w3-container w3-card w3-white">
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-mortar-board fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experience and Awards</h2>
+          <hr class="section-divider">
           <div class="w3-container">
             <h4>Work Experience:</h4>
             <p>Software Engineer, Google, May 2022 - Present</p>
@@ -173,7 +266,7 @@
             <hr>
           </div>
         </div>
-        
+
       </div>
 
       <!-- End Grid -->
@@ -182,8 +275,13 @@
     <!-- End Page Container -->
   </div>
 
-  <footer class="w3-container w3-teal w3-center w3-margin-top">
-    <p>Junyang Shi's Homepage</p>
+  <footer class="w3-container w3-teal w3-center w3-margin-top" style="border-radius: 0 0 16px 16px;">
+    <p style="margin:12px 0; font-size:1.1em;">Junyang Shi's Homepage &copy; 2025</p>
+    <div class="social-icons">
+      <a href="mailto:jshi28@binghamton.edu" title="Email"><i class="fa fa-envelope"></i></a>
+      <a href="https://github.com/junyang28" title="GitHub"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/junyang-shi/" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+    </div>
   </footer>
 
 </body>
